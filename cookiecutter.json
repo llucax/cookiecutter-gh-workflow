@@ -1,0 +1,24 @@
+{
+  "name": null,
+  "description": null,
+  "author_name": "Frequenz Energy-as-a-Service GmbH",
+  "license": [
+    "MIT",
+    "Proprietary"
+  ],
+  "github_org": "frequenz-floss",
+  "github_repo_name": "gh-action-{{cookiecutter.name | slugify}}",
+  "default_codeowners": "@{{cookiecutter.github_org}}/gh-actions-team",
+  "__prompts__": {
+    "name": "Name",
+    "description": "Description",
+    "author_name": "Author name",
+    "license": "License",
+    "github_repo_name": "GitHub repository name",
+    "github_org": "GitHub organization the project belongs to",
+    "default_codeowners": "Default code owners"
+  },
+  "_extensions": [
+    "cookiecutter.extensions.SlugifyExtension"
+  ]
+}

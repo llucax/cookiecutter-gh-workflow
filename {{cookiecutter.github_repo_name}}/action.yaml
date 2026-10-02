@@ -1,0 +1,30 @@
+# License: {{cookiecutter.license}}
+# Copyright © {{cookiecutter.author_name}}
+
+name: "{{cookiecutter.name}}"
+description: "{{cookiecutter.description}}"
+author: "{{cookiecutter.author_name}}"
+
+# Refer to the following link(s) for more information on inputs:
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+inputs:
+  # TODO(cookiecutter): Update the following inputs as needed
+  input1:
+    description: >
+      Some input 1.
+    required: true
+  input2:
+    description: >
+      Some input 2.
+    required: false
+    default: ""
+
+
+# Refer to the following link(s) for more information on the composite run steps:
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs
+runs:
+  using: "composite"
+  steps:
+    - name: Some step
+      shell: bash
+      run: echo "Some step"

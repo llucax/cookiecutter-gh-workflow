@@ -1,0 +1,26 @@
+name: Lint
+
+on: [push, pull_request]
+
+permissions: read-all
+
+jobs:
+  run-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure YAMLlint
+        run: |
+          cat <<'EOT > .yaml-lint.yml
+          extends: default
+          rules:
+            document-start:
+              present: false
+          EOT
+
+      - name: Run linters
+        uses: github/super-linter@v4
+        env:
+          YAML_ERROR_ON_WARNING: "true"
